@@ -1,0 +1,14 @@
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\bin\Debug\net9.0\Progetto-Finale-CSharp.exe
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\bin\Debug\net9.0\Progetto-Finale-CSharp.deps.json
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\bin\Debug\net9.0\Progetto-Finale-CSharp.runtimeconfig.json
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\bin\Debug\net9.0\Progetto-Finale-CSharp.dll
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\bin\Debug\net9.0\Progetto-Finale-CSharp.pdb
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.AssemblyInfoInputs.cache
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.AssemblyInfo.cs
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.dll
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\refint\Progetto-Finale-CSharp.dll
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.pdb
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\Progetto-Finale-CSharp.genruntimeconfig.cache
+C:\Users\marce\Desktop\GitHub\Progetto-Finale-CSharp\obj\Debug\net9.0\ref\Progetto-Finale-CSharp.dll
