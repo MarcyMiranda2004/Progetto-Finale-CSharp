@@ -13,7 +13,7 @@ public class StartButtonScript : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(() => ChangingScene("PresentationScene")); //To Use this, change the name of the scene to the one u need to load.
     }
 
-    
+
     void ChangingScene(string sceneName)
     {
         GameManager.Instance.ChangeScene(sceneName);
