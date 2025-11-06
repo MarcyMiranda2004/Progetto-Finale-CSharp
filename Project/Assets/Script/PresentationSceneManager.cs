@@ -32,7 +32,7 @@ public class PresentationSceneManager : MonoBehaviour
         StartCoroutine(TonySlideIn());
         StartCoroutine(BaloonSlideIn());
 
-        nextBtn.onClick.AddListener(() => ChangingScene("[INSERIRE NUOVA SCENA]"));
+        nextBtn.onClick.AddListener(() => ChangingScene("EquilibrioAlimentareScene"));
     }
 
     void Update()
