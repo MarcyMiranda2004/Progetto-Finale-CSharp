@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     bool isPaused = false;
-    
+
 
     void Awake()
     {
@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    
+
     /// <summary>
     /// This method allow us to change the scene, it needs the name of the scene in string
     /// </summary>

@@ -541,6 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787828683}
   - component: {fileID: 787828682}
+  - component: {fileID: 787828684}
   m_Layer: 0
   m_Name: PresentationSceneManager
   m_TagString: Untagged
@@ -581,6 +582,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787828684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787828681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a9681b396de41409d70e1c07dff762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneralSceneManager
+  tonySprite: {fileID: 282231491}
+  baloonSprite1: {fileID: 1852198575}
+  dialogoText1: {fileID: 1183633648}
+  dialogueFile: {fileID: 4900000, guid: e73dbe5e9ffd0e14590499a89d0e7819, type: 3}
+  twE: {fileID: 332752432}
+  nextBtn: {fileID: 1627334865}
 --- !u!1 &1183633646
 GameObject:
   m_ObjectHideFlags: 0
