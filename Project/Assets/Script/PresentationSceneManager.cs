@@ -32,7 +32,7 @@ public class PresentationSceneManager : MonoBehaviour
         StartCoroutine(TonySlideIn()); // avvia l'animazione di tony che appare dal basso
         StartCoroutine(BaloonSlideIn()); // avvia l'animazione del baloon che appare dall'alto 
 
-        nextBtn.onClick.AddListener(() => ChangingScene("EquilibrioAlimentareScene"));
+        nextBtn.onClick.AddListener(() => ChangingScene("AlimentazioneSalutareScene"));
     }
 
     void Update()

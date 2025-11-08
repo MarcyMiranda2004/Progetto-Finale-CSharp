@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PresentationScene.unity
     guid: 3b5302fce89c4dc43bc99e51840c98fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EquilibrioAlimentareScene.unity
     guid: 36369c22eccd1a643b0d62394c653d33
   - enabled: 1

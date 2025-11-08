@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class Question
 {
@@ -57,13 +58,15 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void ShowNextQuestion()
+    async void ShowNextQuestion()
     {
         if (indiceDomanda >= Domande.Count)
         {
             DomandeText.text = $"Quiz completato!\nHai risposto correttamente a {risposteCorrette} su {Domande.Count}.";
             feedbackText.text = "";
             foreach (var btn in BottoneRisposta) btn.gameObject.SetActive(false);
+            await Task.Delay(2000);
+            GameManager.Instance.ChangeScene("PiramideAlimentare");
             return;
         }
 
