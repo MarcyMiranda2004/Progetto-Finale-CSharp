@@ -6,11 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/TitleSceen.unity
+    path: Assets/Scenes/TitleSceen.unity
     guid: f3a6d2aeb85c36c4b8384a074df21c27
   - enabled: 1
-    path: Assets/Resources/Scenes/PresentationScene.unity
+    path: Assets/Scenes/PresentationScene.unity
     guid: 3b5302fce89c4dc43bc99e51840c98fd
+  - enabled: 1
+    path: Assets/Scenes/EquilibrioAlimentareScene.unity
+    guid: 36369c22eccd1a643b0d62394c653d33
+  - enabled: 1
+    path: Assets/Scenes/Minigame.unity
+    guid: 6a77a895f9637cc4c828f26b4183bcd5
+  - enabled: 1
+    path: Assets/Scenes/AlimentazioneSalutareScene.unity
+    guid: b814b980b1617be41933b3a488172a21
+  - enabled: 1
+    path: Assets/Scenes/PiramideAlimentareDietaScene.unity
+    guid: 1fe4e306e73a80047b4bd2cea1239ffe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

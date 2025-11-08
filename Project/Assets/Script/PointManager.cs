@@ -59,17 +59,18 @@ public class PointManager : MonoBehaviour
         if (points >= 5)
         {
             Debug.Log("Hai raggiunto il punteggio necessario!");
-            StartCoroutine(Win());
+            Win();
         }
     }
 
-    private IEnumerator Win()
+    private void Win()
     {
+        
         WinSprite.SetActive(true);
         puntiText.gameObject.SetActive(false);
         eventiText.gameObject.SetActive(false);
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(2f);
-        GameManager.Instance.ChangeScene("MenuVittoria");
+        // yield return new WaitForSecondsRealtime(10f);
+        // GameManager.Instance.ChangeScene("MenuVittoria");
     }
 }
