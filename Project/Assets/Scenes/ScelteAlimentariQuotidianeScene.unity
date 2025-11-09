@@ -904,13 +904,13 @@ MonoBehaviour:
   dialogoText1: {fileID: 2038049790}
   twE: {fileID: 559004055}
   dialogueFiles:
-  - {fileID: 4900000, guid: f7f5c8208e0d1794794f4bb6da4bbd1c, type: 3}
-  - {fileID: 4900000, guid: 3a63caa97c1af45438d582e69112162e, type: 3}
-  - {fileID: 4900000, guid: 94e9c4f43e1fa104ab75be0ad804afdb, type: 3}
-  - {fileID: 4900000, guid: cb2dccaa2a2f8d14193164722a19e435, type: 3}
-  - {fileID: 4900000, guid: fc6f7a889f06d3a4cbdad2a2f1178dc1, type: 3}
-  - {fileID: 4900000, guid: f8ab0d3065bcf70499c5728c08358d41, type: 3}
-  nextSceneName: Minigame
+  - {fileID: 4900000, guid: 8c051b5a262596a439b812400cf5ef12, type: 3}
+  - {fileID: 4900000, guid: ea8bdcde708c636449866a95aadbe6d1, type: 3}
+  - {fileID: 4900000, guid: 0dd0c1b001e12d54a9de58083438e997, type: 3}
+  - {fileID: 4900000, guid: c228983f15e4aa1489af960348041075, type: 3}
+  - {fileID: 4900000, guid: dab6bba1ca44bb947ad9f099878b9a20, type: 3}
+  - {fileID: 4900000, guid: ee49a2dda35793f43929db14cf220239, type: 3}
+  nextSceneName: Piramide
 --- !u!1001 &1699183714
 PrefabInstance:
   m_ObjectHideFlags: 0
