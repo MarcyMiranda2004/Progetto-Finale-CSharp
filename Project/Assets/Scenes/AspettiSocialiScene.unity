@@ -904,12 +904,12 @@ MonoBehaviour:
   dialogoText1: {fileID: 2038049790}
   twE: {fileID: 559004055}
   dialogueFiles:
-  - {fileID: 4900000, guid: 4e9ab344c656c8043b49b410b56fd2b9, type: 3}
-  - {fileID: 4900000, guid: 42a2dd508ca3cfa479b0b9f800dbbce5, type: 3}
-  - {fileID: 4900000, guid: 05c3a0adda696944faf014aca85deaa3, type: 3}
-  - {fileID: 4900000, guid: 73e36702d19264d46af1008c504e0096, type: 3}
-  - {fileID: 4900000, guid: 85540f5f284b58b419f726f5281b516a, type: 3}
-  - {fileID: 4900000, guid: e418dff2496d5bd43beaf560abe1a1eb, type: 3}
+  - {fileID: 4900000, guid: f7f5c8208e0d1794794f4bb6da4bbd1c, type: 3}
+  - {fileID: 4900000, guid: 3a63caa97c1af45438d582e69112162e, type: 3}
+  - {fileID: 4900000, guid: 94e9c4f43e1fa104ab75be0ad804afdb, type: 3}
+  - {fileID: 4900000, guid: cb2dccaa2a2f8d14193164722a19e435, type: 3}
+  - {fileID: 4900000, guid: fc6f7a889f06d3a4cbdad2a2f1178dc1, type: 3}
+  - {fileID: 4900000, guid: f8ab0d3065bcf70499c5728c08358d41, type: 3}
   nextSceneName: Minigame
 --- !u!1001 &1699183714
 PrefabInstance:
