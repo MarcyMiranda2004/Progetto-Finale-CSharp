@@ -1,10 +1,10 @@
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Question
 {
@@ -15,7 +15,6 @@ public class Question
 
 public class QuizManager : MonoBehaviour
 {
-
     public TMP_Text DomandeText;
     public Button[] BottoneRisposta;
     public TMP_Text feedbackText;
@@ -40,10 +39,12 @@ public class QuizManager : MonoBehaviour
 
         foreach (string line in lines)
         {
-            if (string.IsNullOrWhiteSpace(line)) continue;
+            if (string.IsNullOrWhiteSpace(line))
+                continue;
 
             string[] parts = line.Trim().Split(';');
-            if (parts.Length < 3) continue;
+            if (parts.Length < 3)
+                continue;
 
             Question q = new Question();
             q.question = parts[0];
@@ -62,9 +63,11 @@ public class QuizManager : MonoBehaviour
     {
         if (indiceDomanda >= Domande.Count)
         {
-            DomandeText.text = $"Quiz completato!\nHai risposto correttamente a {risposteCorrette} su {Domande.Count}.";
+            DomandeText.text =
+                $"Quiz completato!\nHai risposto correttamente a {risposteCorrette} su {Domande.Count}.";
             feedbackText.text = "";
-            foreach (var btn in BottoneRisposta) btn.gameObject.SetActive(false);
+            foreach (var btn in BottoneRisposta)
+                btn.gameObject.SetActive(false);
             await Task.Delay(2000);
             GameManager.Instance.ChangeScene("PiramideAlimentare");
             return;
@@ -95,11 +98,15 @@ public class QuizManager : MonoBehaviour
             if (i < risposteOriginali.Length)
             {
                 BottoneRisposta[i].gameObject.SetActive(true);
-                BottoneRisposta[i].GetComponentInChildren<TMP_Text>().text = risposteOriginali[indici[i]];
+                BottoneRisposta[i].interactable = true;
+                BottoneRisposta[i].GetComponentInChildren<TMP_Text>().text = risposteOriginali[
+                    indici[i]
+                ];
 
                 int indiceSelezionato = i;
                 BottoneRisposta[i].onClick.RemoveAllListeners();
-                BottoneRisposta[i].onClick.AddListener(() => CheckAnswer(indiceSelezionato, nuovoIndiceCorretto));
+                BottoneRisposta[i]
+                    .onClick.AddListener(() => CheckAnswer(indiceSelezionato, nuovoIndiceCorretto));
             }
             else
             {
@@ -113,6 +120,9 @@ public class QuizManager : MonoBehaviour
 
     void CheckAnswer(int selectedIndex, int correctIndex)
     {
+        foreach (var btn in BottoneRisposta)
+            btn.interactable = false;
+
         if (selectedIndex == correctIndex)
         {
             feedbackText.text = "Corretto!";
