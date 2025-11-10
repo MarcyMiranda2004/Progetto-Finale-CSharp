@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6050475872120151290, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050475872120151290, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 8393686229996239212, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
       propertyPath: m_Name
       value: PauseManager

@@ -1,10 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseScript : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+
+    [SerializeField] private Button _resumeButton;
     bool isPaused = false;
 
+    void Start()
+    {
+        _resumeButton.onClick.AddListener(ResumeGame);
+    }
     // Update is called once per frame
     void Update()
     {
