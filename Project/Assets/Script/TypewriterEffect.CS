@@ -7,10 +7,12 @@ using UnityEngine;
 public class TypewriterEffect : MonoBehaviour
 {
     [Header("Riferimenti UI")]
-    [SerializeField] private TextMeshProUGUI dialogoText1;
+    [SerializeField]
+    private TextMeshProUGUI dialogoText1;
 
     [Header("Variabili")]
-    [SerializeField] private float typeSpeed = 0.03f;
+    [SerializeField]
+    private float typeSpeed = 0.03f;
 
     private string fullText;
     private Coroutine typingCoroutine;
@@ -19,24 +21,29 @@ public class TypewriterEffect : MonoBehaviour
 
     private void Awake()
     {
-        if (dialogoText1 == null) dialogoText1 = GetComponent<TextMeshProUGUI>(); // recupera il Text Mesh Pro se non viene assegnato
+        if (dialogoText1 == null)
+            dialogoText1 = GetComponent<TextMeshProUGUI>(); // recupera il Text Mesh Pro se non viene assegnato
 
-        if (dialogoText1 == null) Debug.LogError("Nessun TextMeshProUGUI assegnato al TypewriterEffect!");
-        else dialogoText1.text = "";
+        if (dialogoText1 == null)
+            Debug.LogError("Nessun TextMeshProUGUI assegnato al TypewriterEffect!");
+        else
+            dialogoText1.text = "";
     }
 
     public void ShowText(string textToShow) // prende il contenuto del fil txt come stringa
     {
         fullText = textToShow; // prende il testo come stringa
 
-        if (typingCoroutine != null) StopCoroutine(typingCoroutine); // se la typingCoroutine non esiste ferma la Coroutine 
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine); // se la typingCoroutine non esiste ferma la Coroutine
 
         typingCoroutine = StartCoroutine(TypeText()); // avvia la Coroutine e lancia il metodo TypeText
     }
 
     private IEnumerator TypeText()
     {
-        if (dialogoText1 == null) yield break; // si ferma se il testo è null
+        if (dialogoText1 == null)
+            yield break; // si ferma se il testo è null
 
         isTyping = true;
         skipRequested = false;
@@ -55,7 +62,8 @@ public class TypewriterEffect : MonoBehaviour
             sb.Append(c); // "appende" ogni carattere per stamparlo
             dialogoText1.text = sb.ToString(); // converte ogni stringa per stamparla
 
-            while (Time.timeScale == 0f) yield return null; // quando il gioco è in pausa la scrittura si ferma
+            while (Time.timeScale == 0f)
+                yield return null; // quando il gioco è in pausa la scrittura si ferma
 
             yield return new WaitForSeconds(typeSpeed); // aspetta typeSpeed secondi prima di stampare il carattere successivo
         }
@@ -66,7 +74,8 @@ public class TypewriterEffect : MonoBehaviour
 
     public void SkipTypingAnimation() // se vene chiamato mentre isTyping è attivo (isTyping == true) allora rende attiva la skipRequested
     {
-        if (isTyping) skipRequested = true;
+        if (isTyping)
+            skipRequested = true;
     }
 
     public bool IsTyping() // ritorna lo stato della isTyping

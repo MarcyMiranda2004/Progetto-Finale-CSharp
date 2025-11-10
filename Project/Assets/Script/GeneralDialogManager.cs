@@ -5,13 +5,21 @@ using UnityEngine;
 public class GeneralDialogManager : MonoBehaviour
 {
     [Header("Riferimenti")]
-    [SerializeField] private AnimationManager animationManager;
-    [SerializeField] private TextMeshProUGUI dialogoText1;
-    [SerializeField] private TypewriterEffect twE;
+    [SerializeField]
+    private AnimationManager animationManager;
+
+    [SerializeField]
+    private TextMeshProUGUI dialogoText1;
+
+    [SerializeField]
+    private TypewriterEffect twE;
 
     [Header("Dialoghi multipli")]
-    [SerializeField] private TextAsset[] dialogueFiles;
-    [SerializeField] private string nextSceneName;
+    [SerializeField]
+    private TextAsset[] dialogueFiles;
+
+    [SerializeField]
+    private string nextSceneName;
 
     private int currentFileIndex = 0;
     private string[] currentDialogues;
@@ -40,7 +48,8 @@ public class GeneralDialogManager : MonoBehaviour
 
     void Update()
     {
-        if (!dialogueStarted || twE == null) return;
+        if (!dialogueStarted || twE == null)
+            return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -77,7 +86,10 @@ public class GeneralDialogManager : MonoBehaviour
             return;
         }
 
-        currentDialogues = file.text.Split(new string[] { "---" }, System.StringSplitOptions.RemoveEmptyEntries);
+        currentDialogues = file.text.Split(
+            new string[] { "---" },
+            System.StringSplitOptions.RemoveEmptyEntries
+        );
         currentDialogueIndex = 0;
         dialogueStarted = true;
 

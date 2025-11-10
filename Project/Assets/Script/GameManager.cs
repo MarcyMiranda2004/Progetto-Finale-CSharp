@@ -3,13 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     // This class should manage the transition to another scene, we should implement this to all the scenes we make.
     private static GameManager _instance;
-    public static GameManager Instance { get { return _instance; } }
+    public static GameManager Instance
+    {
+        get { return _instance; }
+    }
 
     bool isPaused = false;
-
 
     void Awake()
     {
@@ -41,7 +42,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
-
 
     public void QuitGame()
     {
