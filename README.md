@@ -39,9 +39,6 @@ Per far funzionare il gioco sul tuo PC avrai bisogno di installare:
 ---
 
 ## 📁 **Struttura del progetto** 📁
-
-## 📁 **Struttura del progetto**
-
 ```text
 Healthy-Chef/
 ├─ .gitignore
