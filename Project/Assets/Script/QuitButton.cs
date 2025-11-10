@@ -13,5 +13,4 @@ public class QuitButton : MonoBehaviour
     {
         GameManager.Instance.QuitGame();
     }
-    
 }

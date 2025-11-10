@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public static MusicPlayer Instance;
+    public static MusicPlayer Instance; // Singleton: accesso globale all'istanza del MusicPlayer
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip[] tracks;
+    public AudioSource audioSource; // Componente AudioSource che riproduce le tracce
+    public AudioClip[] tracks; // Lista delle tracce musicali disponibili
 
-    private int currentTrack = 0;
-    private bool isPaused = false;
-    private bool isMuted = false;
-    private bool isFading = false;
-
-    private float userVolume = 0.2f;
+    private int currentTrack = 0; // Indice della traccia attualmente in riproduzione
+    private bool isPaused = false; // Indica se la riproduzione è in pausa
+    private bool isMuted = false; // Indica se l’audio è in stato di muto
+    private bool isFading = false; // Indica se è in corso un effetto di fade-in/out
+    private float userVolume = 0.2f; // Volume preferito dell’utente (salvato nei PlayerPrefs)
 
     void Awake()
     {
+        // Implementazione del pattern Singleton: assicura che esista una sola istanza del MusicPlayer
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Distrugge eventuali duplicati
             return;
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Mantiene l’oggetto tra i caricamenti di scena
 
+        // Assicura che esista un componente AudioSource
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -35,27 +36,33 @@ public class MusicPlayer : MonoBehaviour
                 audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        // 👇 Permette di suonare anche quando il gioco è in pausa
+        // Permette di continuare a riprodurre anche se il gioco è messo in pausa
         audioSource.ignoreListenerPause = true;
 
+        // Recupera il volume salvato in precedenza (default: 0.2)
         float savedVolume = PlayerPrefs.GetFloat("MusicVolume", 0.2f);
         audioSource.volume = savedVolume;
         userVolume = savedVolume;
-        audioSource.loop = false;
-        audioSource.playOnAwake = false;
+
+        // Impostazioni di base dell’AudioSource
+        audioSource.loop = false; // Non loopa automaticamente (passa al prossimo brano da codice)
+        audioSource.playOnAwake = false; // Non suona subito all’avvio
     }
 
     void Start()
     {
+        // Se non ci sono tracce, avvisa e interrompi
         if (tracks == null || tracks.Length == 0)
         {
             Debug.LogWarning("MusicPlayer: nessuna traccia trovata!");
             return;
         }
 
+        // Imposta la prima traccia e avvia la riproduzione
         audioSource.clip = tracks[currentTrack];
         audioSource.Play();
 
+        // Applica un fade-in all’inizio per un effetto più morbido
         StartCoroutine(FadeIn(audioSource, userVolume, 1f));
     }
 
@@ -64,8 +71,14 @@ public class MusicPlayer : MonoBehaviour
         if (audioSource == null)
             return;
 
-        // Quando finisce naturalmente → passa al prossimo brano
-        if (!audioSource.isPlaying && !isPaused && !isMuted && audioSource.clip != null && !isFading)
+        // Quando la traccia termina naturalmente e non è in pausa, passa automaticamente alla successiva
+        if (
+            !audioSource.isPlaying
+            && !isPaused
+            && !isMuted
+            && audioSource.clip != null
+            && !isFading
+        )
         {
             NextTrack();
         }
@@ -76,6 +89,7 @@ public class MusicPlayer : MonoBehaviour
         if (audioSource == null)
             return;
 
+        // Alterna tra pausa e riproduzione
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
@@ -90,6 +104,7 @@ public class MusicPlayer : MonoBehaviour
 
     public bool IsPlaying()
     {
+        // Ritorna true se l’audio è in riproduzione
         return audioSource != null && audioSource.isPlaying;
     }
 
@@ -98,11 +113,16 @@ public class MusicPlayer : MonoBehaviour
         if (tracks == null || tracks.Length == 0 || audioSource == null)
             return;
 
+        // Interrompe eventuali fade in corso per evitare conflitti
         StopAllCoroutines();
         isFading = false;
 
+        // Incrementa l’indice e torna all’inizio se supera il numero di tracce
         currentTrack = (currentTrack + 1) % tracks.Length;
+
         Debug.Log($"▶ NextTrack(): {tracks[currentTrack].name}");
+
+        // Esegue un fade-out della traccia attuale e un fade-in della successiva
         StartCoroutine(FadeOutIn(tracks[currentTrack], 0.6f));
     }
 
@@ -114,8 +134,12 @@ public class MusicPlayer : MonoBehaviour
         StopAllCoroutines();
         isFading = false;
 
+        // Decrementa l’indice e torna all’ultima traccia se va sotto zero
         currentTrack = (currentTrack - 1 + tracks.Length) % tracks.Length;
+
         Debug.Log($"⏮ PreviousTrack(): {tracks[currentTrack].name}");
+
+        // Esegue il cambio brano con effetto di transizione
         StartCoroutine(FadeOutIn(tracks[currentTrack], 0.6f));
     }
 
@@ -124,6 +148,7 @@ public class MusicPlayer : MonoBehaviour
         if (audioSource == null)
             return;
 
+        // Alterna tra muto e non muto
         isMuted = !isMuted;
         audioSource.mute = isMuted;
     }
@@ -133,15 +158,18 @@ public class MusicPlayer : MonoBehaviour
         if (audioSource == null)
             return;
 
+        // Clampa il valore tra 0 e 1 e aggiorna il volume
         userVolume = Mathf.Clamp01(value);
         audioSource.volume = userVolume;
 
+        // Salva la preferenza dell’utente
         PlayerPrefs.SetFloat("MusicVolume", userVolume);
         PlayerPrefs.Save();
     }
 
     public string GetCurrentTrackName()
     {
+        // Ritorna il nome della traccia attuale o "(none)" se non disponibile
         return audioSource != null && audioSource.clip != null ? audioSource.clip.name : "(none)";
     }
 
@@ -153,29 +181,31 @@ public class MusicPlayer : MonoBehaviour
         isFading = true;
         float startVol = audioSource.volume;
 
-        // Fade-out indipendente dal TimeScale
+        // FADE OUT — indipendente dal TimeScale
         float t = 0f;
         while (t < duration * 0.5f)
         {
             if (audioSource == null)
                 yield break;
-            t += Time.unscaledDeltaTime; // indipendente dal Time.timeScale
+
+            t += Time.unscaledDeltaTime; // uso di unscaledDeltaTime per funzionare anche in pausa
             audioSource.volume = Mathf.Lerp(startVol, 0f, t / (duration * 0.5f));
             yield return null;
         }
 
-        // Cambio clip e riavvio anche in pausa
+        // Cambio clip e riproduzione
         audioSource.clip = newClip;
         audioSource.time = 0f;
         audioSource.Play();
 
-        // Fade-in
+        // FADE IN
         t = 0f;
         while (t < duration * 0.5f)
         {
             if (audioSource == null)
                 yield break;
-            t += Time.unscaledDeltaTime; 
+
+            t += Time.unscaledDeltaTime;
             audioSource.volume = Mathf.Lerp(0f, userVolume, t / (duration * 0.5f));
             yield return null;
         }
@@ -193,9 +223,10 @@ public class MusicPlayer : MonoBehaviour
         source.volume = 0f;
         float t = 0f;
 
+        // Esegue un fade-in graduale indipendente dal TimeScale
         while (t < duration)
         {
-            t += Time.unscaledDeltaTime; // fade indipendente dal TimeScale
+            t += Time.unscaledDeltaTime;
             source.volume = Mathf.Lerp(0f, userVolume, t / duration);
             yield return null;
         }
@@ -209,6 +240,7 @@ public class MusicPlayer : MonoBehaviour
         if (label == null)
             return;
 
+        // Aggiorna un'etichetta di testo con il nome della traccia corrente
         label.text =
             audioSource != null && audioSource.clip != null
                 ? $"Now Playing: {audioSource.clip.name}"

@@ -7,19 +7,31 @@ using UnityEngine.UI;
 public class PresentationSceneManager : MonoBehaviour
 {
     private PresentationSceneManager _instance;
-    public PresentationSceneManager Instance { get => _instance; }
+    public PresentationSceneManager Instance
+    {
+        get => _instance;
+    }
 
     [Header("Tony Slide In Reference")]
-    [SerializeField] private Animator tonySprite;
+    [SerializeField]
+    private Animator tonySprite;
 
     [Header("Baloon 1")]
-    [SerializeField] private Animator baloonSprite1;
-    [SerializeField] private TextMeshProUGUI dialogoText1; // definiamo il o i file di testo da usare
-    [SerializeField] private TextAsset dialogueFile;
-    [SerializeField] private TypewriterEffect twE;
+    [SerializeField]
+    private Animator baloonSprite1;
+
+    [SerializeField]
+    private TextMeshProUGUI dialogoText1; // definiamo il o i file di testo da usare
+
+    [SerializeField]
+    private TextAsset dialogueFile;
+
+    [SerializeField]
+    private TypewriterEffect twE;
 
     [Header("Buttons")]
-    [SerializeField] private Button nextBtn;
+    [SerializeField]
+    private Button nextBtn;
     private bool dialogueStarted = false;
 
     void Start()
@@ -30,18 +42,21 @@ public class PresentationSceneManager : MonoBehaviour
         dialogoText1.text = ""; // svuota il text mesh in modo che alla partenza sia vuoto
 
         StartCoroutine(TonySlideIn()); // avvia l'animazione di tony che appare dal basso
-        StartCoroutine(BaloonSlideIn()); // avvia l'animazione del baloon che appare dall'alto 
+        StartCoroutine(BaloonSlideIn()); // avvia l'animazione del baloon che appare dall'alto
 
         nextBtn.onClick.AddListener(() => ChangingScene("AlimentazioneSalutareScene"));
     }
 
     void Update()
     {
-        if (twE == null) return; // controlla la presenza di un TypewriterEffect
+        if (twE == null)
+            return; // controlla la presenza di un TypewriterEffect
 
-        if (Input.GetMouseButtonDown(0) && twE.IsTyping()) twE.SkipTypingAnimation(); // se clicchiamo sulla canvas skippa l'animazione di scrittura
+        if (Input.GetMouseButtonDown(0) && twE.IsTyping())
+            twE.SkipTypingAnimation(); // se clicchiamo sulla canvas skippa l'animazione di scrittura
 
-        if (dialogueStarted && !twE.IsTyping()) nextBtn.gameObject.SetActive(true); // attiva il bottone "Andiamo! >>" solo quando il testo è completo (dialogueStarted == true && twE.IsType == false)
+        if (dialogueStarted && !twE.IsTyping())
+            nextBtn.gameObject.SetActive(true); // attiva il bottone "Andiamo! >>" solo quando il testo è completo (dialogueStarted == true && twE.IsType == false)
     }
 
     IEnumerator TonySlideIn()
