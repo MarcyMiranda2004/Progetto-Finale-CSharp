@@ -70,7 +70,7 @@ Healthy-Chef/
 │  └─ .vscode/              # Configurazione editor VS Code
 │
 └─ repo-tree.txt            # Mappa generata della repo
-
+```
 
 ---
 
