@@ -6,8 +6,6 @@
 /Project/[Ll]ibrary/
 /Project/[Tt]emp/
 /Project/[Oo]bj/
-/Project/[Bb]uild/
-/Project/[Bb]uilds/
 /Project/[Ll]ogs/
 /Project/[Uu]ser[Ss]ettings/
 /Project/*.log
@@ -94,8 +92,6 @@ pnpm-debug.log*
 .env
 .env.local
 .env.*.local
-dist/
-build/
 .cache/
 .next/
 out/
