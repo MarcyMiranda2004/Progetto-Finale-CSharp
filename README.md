@@ -81,6 +81,15 @@ Healthy-Chef/
 - **Gabriele Frangiosa** - *https://github.com/DemonBloodstorm*
 
 ---
+## 📝 **ToDo** 📝
+- Miglioramento della qualita delle animazioni
+- Bottone di Skip per saltare minigiochi o scene a piacimento
+- Aggiunta di aromenti
+- Nuovi minigiochi
+- Save point tra le scene
+- Scelta dei pronomi del giocator*
+- Modalità extra
+---
 
 ## 📸 **Immagini**
 
