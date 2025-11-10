@@ -41,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Quiz - AspettiSociali.unity
     guid: 4ec6ca503bc34e44997a940c1277c05f
+  - enabled: 1
+    path: Assets/Scenes/SalutiScene.unity
+    guid: f40dd3c8d8e7ecc4c8e7b6f7d714dddd
+  - enabled: 1
+    path: Assets/Scenes/RingraziamentiScene.unity
+    guid: 044c4568cf79b0f4ca32665505a18097
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
