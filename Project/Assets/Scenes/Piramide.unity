@@ -1159,7 +1159,7 @@ MonoBehaviour:
   - {fileID: 2075365285}
   - {fileID: 1150827768}
   - {fileID: 63726185}
-  nextSceneName: AspettiSocialiScene
+  nextSceneName: ScelteAlimentariQuotidianeScene
   victorySprite: {fileID: 1383027857}
 --- !u!4 &413417085
 Transform:

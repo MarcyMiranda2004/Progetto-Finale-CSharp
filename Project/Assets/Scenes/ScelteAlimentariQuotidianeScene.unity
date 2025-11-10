@@ -910,7 +910,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c228983f15e4aa1489af960348041075, type: 3}
   - {fileID: 4900000, guid: dab6bba1ca44bb947ad9f099878b9a20, type: 3}
   - {fileID: 4900000, guid: ee49a2dda35793f43929db14cf220239, type: 3}
-  nextSceneName: Piramide
+  nextSceneName: Minigame
 --- !u!1001 &1699183714
 PrefabInstance:
   m_ObjectHideFlags: 0

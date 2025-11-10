@@ -910,7 +910,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: cb2dccaa2a2f8d14193164722a19e435, type: 3}
   - {fileID: 4900000, guid: fc6f7a889f06d3a4cbdad2a2f1178dc1, type: 3}
   - {fileID: 4900000, guid: f8ab0d3065bcf70499c5728c08358d41, type: 3}
-  nextSceneName: Minigame
+  nextSceneName: Quiz - AspettiSociali
 --- !u!1001 &1699183714
 PrefabInstance:
   m_ObjectHideFlags: 0

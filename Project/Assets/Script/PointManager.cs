@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -63,7 +64,7 @@ public class PointManager : MonoBehaviour
         }
     }
 
-    private void Win()
+    private async Task Win()
     {
         
         WinSprite.SetActive(true);
@@ -71,6 +72,7 @@ public class PointManager : MonoBehaviour
         eventiText.gameObject.SetActive(false);
         Time.timeScale = 0f;
         // yield return new WaitForSecondsRealtime(10f);
-        // GameManager.Instance.ChangeScene("MenuVittoria");
+        await Task.Delay(5000);
+        GameManager.Instance.ChangeScene("AspettiSocialiScene");
     }
 }

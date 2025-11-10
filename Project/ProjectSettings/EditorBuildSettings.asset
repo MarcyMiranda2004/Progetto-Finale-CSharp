@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AspettiSocialiScene.unity
     guid: b71fa1436b3e7bd4e95556044a9ebe93
+  - enabled: 1
+    path: Assets/Scenes/ScelteAlimentariQuotidianeScene.unity
+    guid: e09a249c4b538cb4186728726ba03f7d
+  - enabled: 1
+    path: Assets/Scenes/Quiz - AspettiSociali.unity
+    guid: 4ec6ca503bc34e44997a940c1277c05f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
