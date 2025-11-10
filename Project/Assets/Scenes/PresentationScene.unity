@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &52562930 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2597725565166318827, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &119753453
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,17 +300,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &240932455 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 851207026316683628, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &282231487
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,69 +575,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &573058514 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5045842136146910764, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!1 &715172689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 715172691}
-  - component: {fileID: 715172690}
-  m_Layer: 0
-  m_Name: MusicUIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &715172690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715172689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87065202423ae2d49aa4e107de742b6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicUIImmortal
-  volumeSlider: {fileID: 52562930}
-  nextButton: {fileID: 800209567}
-  prevButton: {fileID: 573058514}
-  playPauseButton: {fileID: 967377802}
-  muteButton: {fileID: 240932455}
-  trackNameText: {fileID: 1428850088}
-  playIcon: {fileID: 21300000, guid: 7a74761b74b4919439b6698cccbfb0eb, type: 3}
-  pauseIcon: {fileID: 21300000, guid: 6caef77995d94354d9175c243a9df53b, type: 3}
---- !u!4 &715172691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715172689}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1346.0457, y: 551.7102, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787828681
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,28 +643,6 @@ MonoBehaviour:
   dialogueFile: {fileID: 4900000, guid: e73dbe5e9ffd0e14590499a89d0e7819, type: 3}
   twE: {fileID: 332752432}
   nextBtn: {fileID: 1627334865}
---- !u!114 &800209567 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3444643463362732916, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &967377802 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2336841419197448887, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1183633646
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,17 +781,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183633646}
   m_CullTransparentMesh: 1
---- !u!114 &1428850088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1770783820469114273, guid: 6c951ce849f52244f8fed2349e8252a1, type: 3}
-  m_PrefabInstance: {fileID: 67923396929255124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1521076495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1426,6 @@ SceneRoots:
   - {fileID: 1521076496}
   - {fileID: 787828683}
   - {fileID: 332752433}
-  - {fileID: 715172691}
   - {fileID: 119753455}
   - {fileID: 549150466}
   - {fileID: 378590637}
