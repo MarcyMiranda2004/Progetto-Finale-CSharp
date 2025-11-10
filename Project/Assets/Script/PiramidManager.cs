@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PyramidManager : MonoBehaviour
@@ -13,28 +14,30 @@ public class PyramidManager : MonoBehaviour
 
     private void Start()
     {
-        // All'inizio, nasconde la sprite di vittoria
         if (victorySprite != null)
             victorySprite.SetActive(false);
     }
 
-    // Questo metodo verrà chiamato ogni volta che un alimento si attacca
-    public void CheckCompletion()
+    public async Task CheckCompletion()
     {
+        // Controlla che tutti i cibi siano posizionati correttamente
         foreach (GrabAndDrag food in allFoods)
         {
             if (!food.IsCorrectlyAttached)
             {
-                // Se almeno uno non è al posto giusto → non ancora completato
                 return;
             }
         }
 
-        // Se arriviamo qui, tutti i cibi sono corretti!
+        // Tutti i cibi sono corretti!
         if (victorySprite != null)
         {
             victorySprite.SetActive(true);
-            GameManager.Instance.ChangeScene(nextSceneName);
         }
+
+        // Aspetta 4 secondi prima di cambiare scena
+        await Task.Delay(4000);
+
+        GameManager.Instance.ChangeScene(nextSceneName);
     }
 }
