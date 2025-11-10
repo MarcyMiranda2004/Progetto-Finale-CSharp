@@ -84,9 +84,9 @@ Healthy-Chef/
 
 ## 📸 **Immagini**
 
-![Start](images\Start.png)
+![Start](images/Start.png)
 
-![Presentazione](images\Presentazione.png)
+![Presentazione](images/Presentazione.png)
 
 ![Benvenuti](images/Benvenuti.png)
 
